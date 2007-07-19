@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc HOWTO README COPYING REPORTING.BUGS
+%doc HOWTO README COPYING REPORTING-BUGS
 %{_bindir}/fio
 %{_bindir}/fio_generate_plots
 
