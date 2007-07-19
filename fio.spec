@@ -1,6 +1,6 @@
 %define name fio
 %define version 1.16.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: A flexible I/O tester/benchmarker
 Name: %{name}
@@ -40,6 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
+%doc HOWTO README COPYING REPORTING.BUGS
 %{_bindir}/fio
 %{_bindir}/fio_generate_plots
 
