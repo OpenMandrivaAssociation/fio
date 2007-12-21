@@ -10,6 +10,7 @@ Source0: %{name}-%{version}.tar.bz2
 License: GPL
 Group: 	System/Kernel and hardware 
 Url: http://git.kernel.dk/?p=fio.git;a=summary
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libaio-devel
 
 %description
