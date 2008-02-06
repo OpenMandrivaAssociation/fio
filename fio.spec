@@ -1,5 +1,5 @@
 %define name fio
-%define version 1.17.3
+%define version 1.18
 %define release %mkrel 1
 
 Summary: A flexible I/O tester/benchmarker
