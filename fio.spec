@@ -1,5 +1,5 @@
 %define name fio
-%define version 1.23
+%define version 1.31
 %define release %mkrel 1
 
 Summary: A flexible I/O tester/benchmarker
@@ -26,7 +26,7 @@ fio displays all sorts of I/O performance information.
 It supports Linux, FreeBSD, and OpenSolaris.
 
 %prep
-%setup -q -n %name
+%setup -q
 
 %build
 %make
