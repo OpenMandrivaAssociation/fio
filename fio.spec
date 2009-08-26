@@ -1,12 +1,12 @@
 %define name fio
-%define version 1.31
+%define version 1.32
 %define release %mkrel 1
 
 Summary: A flexible I/O tester/benchmarker
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}-%{version}.tar.bz2
+Source0: http://www.sfr-fresh.com/unix/privat/%{name}-%{version}.tar.gz
 License: GPL
 Group: 	System/Kernel and hardware 
 Url: http://git.kernel.dk/?p=fio.git;a=summary
