@@ -1,6 +1,6 @@
 %define name fio
-%define version 1.37
-%define release %mkrel 2
+%define version 1.60
+%define release %mkrel 1
 
 Summary: A flexible I/O tester/benchmarker
 Name: %{name}
@@ -32,11 +32,11 @@ It supports Linux, FreeBSD, and OpenSolaris.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -46,4 +46,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/fio_generate_plots
 %{_mandir}/man1/*
 
-%changelog
