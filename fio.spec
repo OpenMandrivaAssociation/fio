@@ -1,6 +1,6 @@
 %define name fio
-%define version 1.60
-%define release %mkrel 1
+%define version 2.0.3
+%define release 1
 
 Summary: A flexible I/O tester/benchmarker
 Name: %{name}
@@ -10,7 +10,6 @@ Source0: http://www.sfr-fresh.com/unix/privat/%{name}-%{version}.tar.gz
 License: GPL
 Group: 	System/Kernel and hardware 
 Url: http://git.kernel.dk/?p=fio.git;a=summary
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libaio-devel
 
 %description
@@ -32,14 +31,9 @@ It supports Linux, FreeBSD, and OpenSolaris.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc HOWTO README COPYING REPORTING-BUGS
 %doc examples
 %{_bindir}/fio
