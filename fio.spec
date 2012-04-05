@@ -1,14 +1,14 @@
 %define name fio
-%define version 2.0.3
+%define version 2.0.6
 %define release 1
 
 Summary: A flexible I/O tester/benchmarker
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://www.sfr-fresh.com/unix/privat/%{name}-%{version}.tar.gz
-License: GPL
-Group: 	System/Kernel and hardware 
+Source0: http://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
+License: GPLv2
+Group: System/Kernel and hardware
 Url: http://git.kernel.dk/?p=fio.git;a=summary
 BuildRequires: libaio-devel
 
