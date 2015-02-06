@@ -1,6 +1,6 @@
 %define name fio
 %define version 2.0.9
-%define release 1
+%define release 2
 
 Summary: A flexible I/O tester/benchmarker
 Name: %{name}
