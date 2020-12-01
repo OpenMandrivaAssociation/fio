@@ -1,16 +1,15 @@
-%define name fio
-%define version 2.0.9
-%define release 2
-
 Summary: A flexible I/O tester/benchmarker
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name: fio
+Version: 3.24
+Release: 1
 Source0: http://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
 License: GPLv2
 Group: System/Kernel and hardware
-Url: http://git.kernel.dk/?p=fio.git;a=summary
+Url: https://github.com/axboe/fio
+
 BuildRequires: libaio-devel
+BuildRequires: pkgconfig(zlib)
+BuildRequires: pkgconfig(python)
 
 %description
 fio is an I/O tool meant to be used both for benchmark and 
@@ -25,19 +24,41 @@ fio displays all sorts of I/O performance information.
 It supports Linux, FreeBSD, and OpenSolaris.
 
 %prep
-%setup -q
+%autosetup -p1
+
+pathfix.py -i %{__python3} -pn \
+ tools/fio_jsonplus_clat2csv \
+ tools/fiologparser.py \
+ tools/hist/*.py \
+ tools/plot/fio2gnuplot \
+ t/steadystate_tests.py
 
 %build
-%make
+%set_build_flags
+%make_build
 
 %install
-%makeinstall
+%make_install prefix=%{_prefix} mandir=%{_mandir}
 
 %files
 %doc HOWTO README COPYING REPORTING-BUGS
 %doc examples
 %{_bindir}/fio
 %{_bindir}/fio_generate_plots
+%{_bindir}/fio_jsonplus_clat2csv
+%{_bindir}/fio-btrace2fio
+%{_bindir}/fio-dedupe
+%{_bindir}/fio-genzipf
+%{_bindir}/fio-histo-log-pctiles.py
+%{_bindir}/fio-verify-state
+%{_bindir}/fio2gnuplot
+%{_bindir}/fiologparser.py
+%{_bindir}/fiologparser_hist.py
+%{_bindir}/genfio
+%dir %{_datadir}/fio
+%{_datadir}/fio/graph2D.gpm
+%{_datadir}/fio/graph3D.gpm
+%{_datadir}/fio/math.gpm
 %{_mandir}/man1/*
 
 
