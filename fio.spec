@@ -1,7 +1,7 @@
 Summary: A flexible I/O tester/benchmarker
 Name: fio
 Version: 3.24
-Release: 2
+Release: 3
 Source0: http://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
 # Fix --version, needed by kdiskmark
 Patch0: fio-version.patch
@@ -37,6 +37,9 @@ pathfix.py -i %{__python3} -pn \
 
 %build
 %set_build_flags
+# --enable-native adds -march=native to compiler flags.
+# Obviously not what we want in a distro build
+./configure --disable-native --extra-cflags="%{optflags}"
 %make_build
 
 %install
