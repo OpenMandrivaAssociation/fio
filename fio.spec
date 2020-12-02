@@ -1,7 +1,7 @@
 Summary: A flexible I/O tester/benchmarker
 Name: fio
 Version: 3.24
-Release: 2
+Release: 3
 Source0: http://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
 # Fix --version, needed by kdiskmark
 Patch0: fio-version.patch
@@ -36,6 +36,8 @@ pathfix.py -i %{__python3} -pn \
  t/steadystate_tests.py
 
 %build
+export CC=gcc
+export CXX=g++
 %set_build_flags
 %make_build
 
