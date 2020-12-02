@@ -1,0 +1,14 @@
+diff --git a/Makefile b/Makefile
+index ecfaa3e..435970a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -267,7 +267,8 @@ FIO-VERSION-FILE: FORCE
+ 	@$(SHELL) $(SRCDIR)/FIO-VERSION-GEN
+ -include FIO-VERSION-FILE
+ 
+-override CFLAGS := -DFIO_VERSION='"$(FIO_VERSION)"' $(FIO_CFLAGS) $(CFLAGS)
++override CFLAGS := $(FIO_CFLAGS) $(CFLAGS)
++CPPFLAGS += -DFIO_VERSION='"$(FIO_VERSION)"'
+ 
+ $(foreach eng,$(ENGINES),$(eval $(call engine_template,$(eng))))
+ 
