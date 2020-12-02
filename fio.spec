@@ -37,6 +37,7 @@ pathfix.py -i %{__python3} -pn \
 
 %build
 %set_build_flags
+sed -i -e 's,-ffast-math,,g' Makefile
 %make_build
 
 %install
