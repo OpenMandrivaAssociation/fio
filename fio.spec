@@ -46,7 +46,7 @@ pathfix.py -i %{__python3} -pn \
 %make_install prefix=%{_prefix} mandir=%{_mandir}
 
 %files
-%doc HOWTO README COPYING REPORTING-BUGS
+%doc HOWTO* README* COPYING REPORTING-BUGS
 %doc examples
 %{_bindir}/fio
 %{_bindir}/fio_generate_plots
