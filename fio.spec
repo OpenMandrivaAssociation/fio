@@ -1,6 +1,6 @@
 Summary: A flexible I/O tester/benchmarker
 Name: fio
-Version:	3.35
+Version:	3.36
 Release:	1
 Source0: http://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
 # Fix --version, needed by kdiskmark
