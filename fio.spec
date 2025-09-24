@@ -27,7 +27,7 @@ fio displays all sorts of I/O performance information.
 It supports Linux, FreeBSD, and OpenSolaris.
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-%{name}-%{version} -p1
 
 pathfix.py -i %{__python3} -pn \
  tools/fio_jsonplus_clat2csv \
