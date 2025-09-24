@@ -1,8 +1,9 @@
 Summary: A flexible I/O tester/benchmarker
 Name: fio
-Version:	3.40
+Version:	3.41
 Release:	1
-Source0: https://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
+#Source0: https://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
+Source0:  https://github.com/axboe/fio/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
 # Fix --version, needed by kdiskmark
 Patch0: fio-version.patch
 License: GPLv2
@@ -26,7 +27,7 @@ fio displays all sorts of I/O performance information.
 It supports Linux, FreeBSD, and OpenSolaris.
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-%{name}-%{version} -p1
 
 pathfix.py -i %{__python3} -pn \
  tools/fio_jsonplus_clat2csv \
