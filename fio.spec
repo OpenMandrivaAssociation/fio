@@ -10,6 +10,11 @@ License: GPLv2
 Group: System/Kernel and hardware
 Url: https://github.com/axboe/fio
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: libaio-devel
 BuildRequires: pkgconfig(zlib)
 BuildRequires: pkgconfig(python)
