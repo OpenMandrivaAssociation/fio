@@ -1,6 +1,6 @@
 Summary: A flexible I/O tester/benchmarker
 Name: fio
-Version:	3.41
+Version:	3.42
 Release:	1
 #Source0: https://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
 Source0:  https://github.com/axboe/fio/archive/%{version}/%{name}-%{name}-%{version}.tar.gz
