@@ -10,11 +10,11 @@ License: GPLv2
 Group: System/Kernel and hardware
 Url: https://github.com/axboe/fio
 
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool-base
-BuildRequires:	slibtool
-BuildRequires:	make
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool-base
+BuildRequires: slibtool
+BuildRequires: make
 BuildRequires: libaio-devel
 BuildRequires: pkgconfig(zlib)
 BuildRequires: pkgconfig(python)
@@ -34,12 +34,12 @@ It supports Linux, FreeBSD, and OpenSolaris.
 %prep
 %autosetup -n %{name}-%{name}-%{version} -p1
 
-pathfix.py -i %{__python3} -pn \
- tools/fio_jsonplus_clat2csv \
- tools/fiologparser.py \
- tools/hist/*.py \
- tools/plot/fio2gnuplot \
- t/steadystate_tests.py
+#pathfix.py -i %{__python3} -pn \
+# tools/fio_jsonplus_clat2csv \
+# tools/fiologparser.py \
+# tools/hist/*.py \
+# tools/plot/fio2gnuplot \
+# t/steadystate_tests.py
 
 %build
 %set_build_flags
